@@ -6,7 +6,7 @@ public class Main {
         try {
             ChatServer server = new ChatServer();
             Registry registry = LocateRegistry.createRegistry(1099);
-            registry.bind("ChatService", server);
+            registry.rebind("ChatService", server);
 
             System.out.println("Server started.");
         } catch (Exception e) {

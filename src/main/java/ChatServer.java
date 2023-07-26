@@ -25,6 +25,16 @@ public class ChatServer extends UnicastRemoteObject implements ChatService {
     public void registerClient(ChatClientInterface client) throws RemoteException {
         clients.add(client);
         System.out.println("New client registered.");
+        System.out.println(client.getName());
+
+        clients.forEach((e)->{
+            try {
+                System.out.println(e.getName());
+            } catch (RemoteException ex) {
+                ex.printStackTrace();
+            }
+        });
+
     }
 
     @Override
